@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyMCon Web Series</title>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon/site.webmanifest">
+
+    <!-- Iconscout Icon CDN-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
+
+    <!-- Google Font (Montserrat)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap">
+
+    <!-- Swiper JS for Logo Slider-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Background Texture -->
+    <style>
+        body {
+            background-image: url("images/bg-texture.png");
+        }
+    </style>
+</head>
+
+<body>
+
+    {{ partial "navbar.html" . }}
+
+    <!-- ============================== START OF HEADER ===================== -->
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__left">
+                <h1>{{.Site.Params.heading}}</h1>
+                <h5>{{ .Site.Params.subHeading }}</h5>
+                <p>{{ .Site.Params.description }}</p>
+                <a href="#" class="btn btn-primary">Register Now</a>
+            </div>
+
+            <div class="header_right">
+                <div class="rocket">
+                    <img src="./images/pymc-logo-350.png">
+                </div>
+                <div class="pulse">
+                    <span style="--delay:1;"></span>
+                    <span style="--delay:2;"></span>
+                    <span style="--delay:3;"></span>
+                    <span style="--delay:4;"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ============================== END OF HEADER ===================== -->
+
+
+
+    <!-- ========================== START OF GOALS ========================== -->
+    <section class="golas">
+        <div class="container golas__container">
+            {{ $goals := .Site.Data.goals }}
+            <div class="golas__left">
+                <h1> {{$goals.title}} </h1>
+                <p>  {{$goals.description}} </p>
+                <a href="{{ $goals.buttonURL }}" class="btn"> {{ $goals.buttonText }}</a>
+            </div>
+
+            <div class="golas__right">
+                {{ range $goals.goal }}
+                    <article class="goal">
+                        <span class="goal__icon"><i class="uil uil-users-alt"></i></span>
+                        <h5> {{ .title }} </h5>
+                        <p> {{ .description }} </p>
+                    </article>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+    <!-- ========================== END OF GOALS ========================== -->
+
+
+
+
+    <!-- ================================== START OF KEYNOTE SPEAKERS ============================== -->
+    <section class="speakers">
+        {{ $speakers := .Site.Data.keynote_speakers}}
+        <h2> {{ $speakers.title}} </h2>
+        <div class="container speakers__container">
+            <div class="swiper speakerSlider">
+                <div class="swiper-wrapper">
+                    {{ range $speakers.keynote_speaker }}
+                        <article class="speaker swiper-slide">
+                            <div class="iframe__container">
+                                <iframe src="{{ .youtubeURL }}" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            </div>
+                            <div class="speaker__info">
+                                <h4> {{ .title }} </h4>
+                                <div class="speaker__description">
+                                    <p> {{ .shortDescription }} </p>
+                                </div>
+                                <a href="{{ .readMoreURL }}" class="btn btn-primary">Learn more</a>
+                            </div>
+                        </article>
+                    {{ end }}
+                </div>
+                <div class="swiper-pagination speaker-pagination"></div>
+            </div>
+        </div>
+    </section>
+    <!-- ================================== END OF KEYNOTE SPEAKERS ============================== -->
+
+
+
+
+    <!-- ================================== START OF TEAM ============================== -->
+    <section class="team" id="organizers">
+        {{ $organizers := .Site.Data.organizers}}
+        <h2> {{ $organizers.title }}</h2>
+        <div class="container team__container">
+            {{ range $organizers.organizer }}
+                <article class="team__member">
+                    <div class="team__member-image">
+                        <img src="./images/organizers/{{ .imgName }}">
+                    </div>
+                    <div class="team__member-info">
+                        <h4>{{ .name }}</h4>
+                        <p>{{ .designation }}</p>
+                    </div>
+                    <div class="team__member-socials">
+                        <a href="{{ .github }}" target="_blank"><i class="uil uil-github"></i></a>
+                        <a href="{{ .twitter }}" target="_blank"><i class="uil uil-twitter-alt"></i></a>
+                        <a href="{{ .linkedin }}" target="_blank"><i class="uil uil-linkedin-alt"></i></a>
+                    </div>
+                </article>
+            {{ end }}
+        </div>
+    </section>
+    <!-- ================================== END OF TEAM ============================== -->
+
+
+
+
+    <!-- ================================== START OF SPONSORS ============================== -->
+    <section class="container sponsors__container">
+        {{ $sponsors := .Site.Data.sponsors}}
+        <h2>{{ $sponsors.title }}</h2>
+        <div class="swiper logoSlider">
+            <div class="swiper-wrapper">
+                {{ range $sponsors.sponsor}}
+                    <div class="sponsor swiper-slide">
+                        <div class="sponsor-logo">
+                            <a href="{{ .url }}">
+                                <img src="./images/sponsors_logos/{{ .logoName }}" alt="{{ .name }}">
+                            </a>
+                        </div>
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+        <div class="swiper-pagination logo-pagination"></div>
+    </section>
+    <!-- ================================== END OF SPONSORS ============================== -->
+
+
+
+
+    <!-- ================================== START OF FAQs ============================== -->
+    <section class="faqs" id="faqs">
+        {{ $faqs := .Site.Data.faqs}}
+        <h2>{{ $faqs.title }}</h2>
+        <div class="container faqs__container">
+            {{ range $faqs.faq}}
+                <article class="faq">
+                    <div class="faq__icon"><i class="uil uil-plus"></i></div>
+                    <div class="question__answer">
+                        <h4> {{ .question }} </h4>
+                        <p> {{ .answer }} </p>
+                    </div>
+                </article>
+            {{ end }}
+        </div>
+    </section>
+    <!-- ================================== END OF FAQs ============================== -->
+
+
+
+
+    <!-- ================================== START OF SUBSCRIBE ============================== -->
+    <section class="subscribe">
+        <div class="container subscribe__container">
+            <div class="subscribe__text">
+                <h1>Subscribe to get updated</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat a odio id blanditiis cupiditate
+                    totam temporibus tempora voluptate adipisci quae.
+                </p>
+            </div>
+            <a href="#" class="btn subscribe__btn">Subscribe</a>
+        </div>
+    </section>
+    <!-- ================================== END OF SUBSCRIBE ============================== -->
+
+    
+    {{ partial "footer.html" . }}
+
+
+
+    <!-- =============== JAVASCRIPT ================== -->
+    <script src="./js/main.js"></script>
+
+    <!-- ================== ANIMATION ==================== -->
+    <script src="./js/animation_script.js"></script>
+
+    <!-- =============== SWIPER SLIDER =============== -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- =============== SPONSORS SLIDER LOGIC ================ -->
+    <script>
+        var swiper = new Swiper(".speakerSlider", {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            loop: true,
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: true,
+            },
+            pagination: {
+                el: ".speaker-pagination",
+                clickable: true,
+            },
+
+            // when windows width is >= 600px
+            breakpoints: {
+                // for Tablate
+                600: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                // for Desktop
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+            }
+        });
+
+        var swiper = new Swiper(".logoSlider", {
+            slidesPerView: 2,
+            spaceBetween: 10,
+            loop: true,
+            autoplay: {
+                delay: 1500,
+                disableOnInteraction: true,
+            },
+            pagination: {
+                el: ".logo-pagination",
+                clickable: true,
+            },
+
+            // when windows width is >= 800px
+            breakpoints: {
+                // for Tablate
+                600: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                // for Desktop
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                },
+            }
+        });
+    </script>
+
+</body>
+
+</html>
