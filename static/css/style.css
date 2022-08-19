@@ -423,7 +423,7 @@ header {
     height: 0;
 }
 
-.iframe__container iframe {
+/* .iframe__container iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -434,7 +434,7 @@ header {
 
 .iframe__container:hover iframe {
     transform: scale(1.1);
-}
+} */
 
 
 .speaker__info {
@@ -522,6 +522,7 @@ header {
 
 .team__member-socials:focus-within  {
     right: 0;
+    transition: none;
 }
 
 .team__member-socials a {
