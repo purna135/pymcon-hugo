@@ -33,7 +33,6 @@
 :focus-visible {
     outline: 2px solid var(--color-white);
     border-radius: 2px;
-    outline-offset: 2px;
 }
 
 
@@ -112,6 +111,39 @@ img {
     background: var(--color-danger);
     color: var(--color-white);
 }
+
+/* ================ SKIP TO MAIN BUTTON =============== */
+.skip_to_main {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: rotate(-90deg) translate(-35%, -150%);
+    transform-origin: 0% -50%;
+    background: transparent;
+    font-size: 0.9rem;
+    z-index: 12;
+    border-radius: 0 0 10px 10px;
+}
+
+.skip_to_main:focus-visible{
+    transform: rotate(-90deg) translate(-35%, -50%);
+}
+
+/* ============== TOP ================= */
+/* .skip_to_main {
+    position: fixed;
+    top: 0;
+    left: 30%;
+    transform: translate(-50%, -100%);
+    background: transparent;
+    font-size: 0.8rem;
+    z-index: 12;
+    border-radius: 0 0 10px 10px;
+}
+
+.skip_to_main:focus-visible{
+    transform: translate(-50%, 0);
+} */
 
 
 /* ================ NAVBAR =============== */
@@ -335,7 +367,7 @@ header {
     transition: var(--transition);
 }
 
-.goal:hover, .goal:focus-visible {
+.goal:hover {
     box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
@@ -379,7 +411,7 @@ header {
     transition: var(--transition);
 }
 
-.speaker:hover, .speaker:focus-visible {
+.speaker:hover {
     background: transparent;
     border-color: var(--color-primary);
 }
@@ -391,7 +423,7 @@ header {
     height: 0;
 }
 
-.iframe__container iframe {
+/* .iframe__container iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -402,7 +434,7 @@ header {
 
 .iframe__container:hover iframe {
     transform: scale(1.1);
-}
+} */
 
 
 .speaker__info {
@@ -447,7 +479,7 @@ header {
     overflow: hidden;
 }
 
-.team__member:hover, .team__member:focus-visible {
+.team__member:hover {
     background: transparent;
     border-color: var(--color-primary);
 }
@@ -458,11 +490,6 @@ header {
 }
 
 .team__member:hover img {
-    filter: saturate(1);
-    transform: scale(1.1);
-}
-
-.team__member:focus-visible img {
     filter: saturate(1);
     transform: scale(1.1);
 }
@@ -493,14 +520,14 @@ header {
     right: 0;
 }
 
-.team__member:focus-visible .team__member-socials {
+.team__member-socials:focus-within  {
     right: 0;
+    transition: none;
 }
 
 .team__member-socials a {
     padding: 0.8rem;
 }
-
 
 
 /* ======================== SPONSORS ====================== */
@@ -533,6 +560,12 @@ header {
 .sponsor-logo img {
     border-radius: 1rem;
     transition: var(--transition);
+}
+
+.sponsor-logo:focus-within img {
+    outline: 3px solid var(--color-white);
+    outline-offset: 4px;
+    border-radius: 5px;
 }
 
 .sponsor:hover img {
