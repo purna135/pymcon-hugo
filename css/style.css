@@ -157,7 +157,7 @@ nav button {
 
 
 /* ============================ HEADER ======================== */
-.header {
+header {
     position: relative;
     top: 5rem;
     overflow: hidden;
@@ -456,7 +456,12 @@ nav button {
     transition: var(--transition);
 }
 
-.team__member:hover, .team__member:focus-visible img {
+.team__member:hover img {
+    filter: saturate(1);
+    transform: scale(1.1);
+}
+
+.team__member:focus-visible img {
     filter: saturate(1);
     transform: scale(1.1);
 }
@@ -483,7 +488,11 @@ nav button {
     transition: var(--transition);
 }
 
-.team__member:hover, .team__member:focus-visible .team__member-socials {
+.team__member:hover .team__member-socials {
+    right: 0;
+}
+
+.team__member:focus-visible .team__member-socials {
     right: 0;
 }
 
