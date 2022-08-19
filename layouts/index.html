@@ -40,7 +40,7 @@
     {{ partial "navbar.html" . }}
 
     <!-- ============================== START OF HEADER ===================== -->
-    <header>
+    <header id="main-content">
         <div class="container header__container">
             <div class="header__left">
                 <h1>{{.Site.Params.heading}}</h1>
@@ -78,7 +78,7 @@
 
             <div class="golas__right">
                 {{ range $goals.goal }}
-                    <article class="goal" tabindex="0">
+                    <article class="goal">
                         <span class="goal__icon"><i class="uil uil-users-alt"></i></span>
                         <h5> {{ .title }} </h5>
                         <p> {{ .description }} </p>
@@ -100,11 +100,11 @@
             <div class="swiper speakerSlider">
                 <div class="swiper-wrapper">
                     {{ range $speakers.keynote_speaker }}
-                        <article class="speaker swiper-slide" tabindex="0">
+                        <article class="speaker swiper-slide">
                             <div class="iframe__container">
-                                <iframe src="{{ .youtubeURL }}" frameborder="0"
+                                {{/*  <iframe src="{{ .youtubeURL }}" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
+                                    allowfullscreen></iframe>  */}}
                             </div>
                             <div class="speaker__info">
                                 <h4> {{ .title }} </h4>
@@ -131,7 +131,7 @@
         <h2> {{ $organizers.title }}</h2>
         <div class="container team__container">
             {{ range $organizers.organizer }}
-                <article class="team__member" tabindex="0">
+                <article class="team__member">
                     <div class="team__member-image">
                         <img src="./images/organizers/{{ .imgName }}">
                     </div>
@@ -140,9 +140,9 @@
                         <p>{{ .designation }}</p>
                     </div>
                     <div class="team__member-socials">
-                        <a href="{{ .github }}" target="_blank" tabindex="-1"><i class="uil uil-github"></i></a>
-                        <a href="{{ .twitter }}" target="_blank" tabindex="-1"><i class="uil uil-twitter-alt"></i></a>
-                        <a href="{{ .linkedin }}" target="_blank" tabindex="-1"><i class="uil uil-linkedin-alt"></i></a>
+                        <a href="{{ .github }}" target="_blank"><i class="uil uil-github"></i></a>
+                        <a href="{{ .twitter }}" target="_blank"><i class="uil uil-twitter-alt"></i></a>
+                        <a href="{{ .linkedin }}" target="_blank"><i class="uil uil-linkedin-alt"></i></a>
                     </div>
                 </article>
             {{ end }}
@@ -162,7 +162,7 @@
                 {{ range $sponsors.sponsor}}
                     <div class="sponsor swiper-slide">
                         <div class="sponsor-logo">
-                            <a href="{{ .url }}" tabindex="-1">
+                            <a href="{{ .url }}"  tabindex="0">
                                 <img src="./images/sponsors_logos/{{ .logoName }}" alt="{{ .name }}">
                             </a>
                         </div>
