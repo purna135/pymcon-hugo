@@ -34,6 +34,18 @@
     outline: 2px solid var(--color-white);
     border-radius: 2px;
     transition: none !important;
+    animation: glowOutline 1.3s ease-out infinite;
+}
+
+
+@keyframes glowOutline {
+    50% {
+        box-shadow: 0 0 0 0.3em rgba(255, 255, 255, 0.75);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0.6em rgba(255, 255, 255, 0);
+    }
 }
 
 
@@ -137,7 +149,7 @@ img {
     border-radius: 0 0 10px 10px;
 }
 
-.skip_to_main:focus-visible{
+.skip_to_main:focus-visible {
     transform: rotate(-90deg) translate(-35%, -50%);
 }
 
@@ -423,7 +435,8 @@ header {
     transition: var(--transition);
 }
 
-.speaker:hover, .speaker:focus-within {
+.speaker:hover,
+.speaker:focus-within {
     background: transparent;
     border-color: var(--color-primary);
 }
@@ -491,7 +504,8 @@ header {
     overflow: hidden;
 }
 
-.team__member:hover, .team__member:focus-within {
+.team__member:hover,
+.team__member:focus-within {
     background: transparent;
     border-color: var(--color-primary);
 }
@@ -533,7 +547,7 @@ header {
     right: 0;
 }
 
-.team__member-socials:focus-within  {
+.team__member-socials:focus-within {
     right: 0;
     transition: none;
 }
@@ -577,9 +591,27 @@ header {
 
 .sponsor-logo:focus-within img {
     outline: 5px solid var(--color-danger);
-    transform: scale(0.8);
     outline-offset: 5px;
     border-radius: 5px;
+    animation: zoom 2.5s ease-out infinite;
+}
+
+.sponsor-logo:focus-within a {
+    animation: none;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(0.8);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(0.8);
+    }
 }
 
 .sponsor:hover img {
@@ -948,7 +980,7 @@ footer ul li a:hover {
     .goal h5 {
         margin: 1rem 0 0.5rem;
     }
-    
+
     .goal p {
         font-size: 0.8rem;
     }
