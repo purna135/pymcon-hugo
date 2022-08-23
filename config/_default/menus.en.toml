@@ -32,7 +32,7 @@
 
 [[main]]
   name = "Organizers"
-  url = "/#organizers"
+  pageRef = "organizers"
   weight = 50
 
 [[main]]

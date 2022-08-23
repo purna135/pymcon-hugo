@@ -94,18 +94,15 @@
 
     <!-- ================================== START OF KEYNOTE SPEAKERS ============================== -->
     <section class="speakers">
-        {{ $speakers := .Site.Data.keynote_speakers}}
+        {{ $speakers := .Site.Data.incoming_talks}}
         <h2> {{ $speakers.title}} </h2>
         <div class="container speakers__container">
             <div class="swiper speakerSlider">
                 <div class="swiper-wrapper">
-                    {{ range $speakers.keynote_speaker }}
+                    {{ range $speakers.incoming_talk }}
                         <article class="speaker swiper-slide">
                             <div class="iframe__container">
-                                <img src="{{ .imgPath }}" alt="{{ .title }}">
-                                {{/*  <iframe src="{{ .youtubeURL }}" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>  */}}
+                                <img src="{{ .imgPath }}" alt="">
                             </div>
                             <div class="speaker__info">
                                 <h4> {{ .title }} </h4>
@@ -131,26 +128,27 @@
         {{ $organizers := .Site.Data.organizers}}
         <h2> {{ $organizers.title }}</h2>
         <div class="container team__container">
-            {{ range $organizers.organizer }}
+            {{range $index, $num := (seq 8) }}
+            {{ $organizer := (index $organizers.organizer $index ) }}
                 <article class="team__member">
                     <div class="team__member-image">
-                        <img src="./images/organizers/{{ .imgName }}">
+                        <img src="{{ $organizer.imgPath }}">
                     </div>
                     <div class="team__member-info">
-                        <h4>{{ .name }}</h4>
-                        <p>{{ .designation }}</p>
+                        <h4>{{ $organizer.name }}</h4>
+                        <p>{{ $organizer.designation }}</p>
                     </div>
                     <div class="team__member-socials">
-                        <a href="{{ .github }}" target="_blank"><i class="uil uil-github"></i></a>
-                        <a href="{{ .twitter }}" target="_blank"><i class="uil uil-twitter-alt"></i></a>
-                        <a href="{{ .linkedin }}" target="_blank"><i class="uil uil-linkedin-alt"></i></a>
+                        <a href="{{ $organizer.github }}" target="_blank"><i class="uil uil-github"></i></a>
+                        <a href="{{ $organizer.twitter }}" target="_blank"><i class="uil uil-twitter-alt"></i></a>
+                        <a href="{{ $organizer.linkedin }}" target="_blank"><i class="uil uil-linkedin-alt"></i></a>
                     </div>
                 </article>
             {{ end }}
         </div>
+        <a href="/organizers" class="btn">Learn more</a>
     </section>
     <!-- ================================== END OF TEAM ============================== -->
-
 
 
 
