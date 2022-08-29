@@ -34,18 +34,6 @@
     outline: 2px solid var(--color-white);
     border-radius: 2px;
     transition: none !important;
-    animation: glowOutline 1.3s ease-out infinite;
-}
-
-
-@keyframes glowOutline {
-    50% {
-        box-shadow: 0 0 0 0.3em rgba(255, 255, 255, 0.75);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0.6em rgba(255, 255, 255, 0);
-    }
 }
 
 
@@ -596,27 +584,9 @@ header {
 
 .sponsor-logo:focus-within img {
     outline: 5px solid var(--color-danger);
+    transform: scale(0.8);
     outline-offset: 5px;
     border-radius: 5px;
-    animation: zoom 2.5s ease-out infinite;
-}
-
-.sponsor-logo:focus-within a {
-    animation: none;
-}
-
-@keyframes zoom {
-    0% {
-        transform: scale(0.8);
-    }
-
-    50% {
-        transform: scale(0.9);
-    }
-
-    100% {
-        transform: scale(0.8);
-    }
 }
 
 .sponsor:hover img {
