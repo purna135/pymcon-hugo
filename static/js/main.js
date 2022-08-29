@@ -1,7 +1,7 @@
 // Change navbar styles on scroll
 
 window.addEventListener('scroll', () => {
-    document.querySelector('nav').classList.toggle
+    document.querySelector('.nav').classList.toggle
         ('window-scroll', window.scrollY > 80)
 })
 

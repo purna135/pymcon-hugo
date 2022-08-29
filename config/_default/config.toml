@@ -14,5 +14,12 @@ summaryLength = 0
   home = ["HTML", "RSS", "JSON"]
 
 [params]
-    custom_css = ["css/style.css"]
-    custom_js = ["js/main.js"]
+    customcss = ["css/main.css"]
+    customjs = ["js/main.js"]
+    customjscssraw = [
+      "<link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.5/css/unicons.css'>",
+      "<link rel='preconnect' href='https://fonts.googleapis.com'>",
+      "<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>",
+      "<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap'>",
+      "<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css' />",
+    ]

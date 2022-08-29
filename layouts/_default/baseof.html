@@ -14,9 +14,7 @@
   data-auto-appearance="{{ .Site.Params.autoSwitchAppearance | default "true" }}"
 >
   {{- partial "head.html" . -}}
-  <body
-    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 bg-neutral text-neutral-900 sm:px-14 md:px-24 lg:px-32 dark:bg-neutral-800 dark:text-neutral max-w-7xl"
-  >
+  <body>
     <div id="the-top" class="absolute flex self-center">
       <a
         class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 dark:bg-neutral-600 focus:translate-y-0"
@@ -32,6 +30,7 @@
     {{ else }}
       {{ partial "partials/header/basic.html" . }}
     {{ end }}
+    <div class="container">
     <div class="relative flex flex-col grow">
       <main id="main-content" class="grow">
         {{ block "main" . }}{{ end }}
@@ -55,5 +54,11 @@
         {{- partial "search.html" . -}}
       {{ end }}
     </div>
+  </div>
+
+  {{ range .Site.Params.customjs }}
+    <script type="text/javascript" src="{{ . | absURL }}"></script>
+  {{- end }}
+  
   </body>
 </html>

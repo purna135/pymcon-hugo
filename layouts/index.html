@@ -68,7 +68,7 @@
 
 
     <!-- ========================== START OF GOALS ========================== -->
-    <section class="golas">
+    <section class="section golas">
         <div class="container golas__container">
             {{ $goals := .Site.Data.goals }}
             <div class="golas__left">
@@ -94,7 +94,7 @@
 
 
     <!-- ================================== START OF KEYNOTE SPEAKERS ============================== -->
-    <section class="speakers">
+    <section class="section speakers">
         {{ $speakers := .Site.Data.incoming_talks}}
         <h2> {{ $speakers.title}} </h2>
         <div class="container speakers__container">
@@ -125,7 +125,7 @@
 
 
     <!-- ================================== START OF TEAM ============================== -->
-    <section class="team" id="organizers">
+    <section class="section team" id="organizers">
         {{ $organizers := .Site.Data.organizers}}
         <h2> {{ $organizers.title }}</h2>
         <div class="container team__container">
@@ -154,7 +154,7 @@
 
 
     <!-- ================================== START OF SPONSORS ============================== -->
-    <section class="container sponsors__container">
+    <section class="section container sponsors__container">
         {{ $sponsors := .Site.Data.sponsors}}
         <h2>{{ $sponsors.title }}</h2>
         <div class="swiper logoSlider">
@@ -178,7 +178,7 @@
 
 
     <!-- ================================== START OF FAQs ============================== -->
-    <section class="faqs" id="faqs">
+    <section class="section faqs" id="faqs">
         {{ $faqs := .Site.Data.faqs}}
         <h2>{{ $faqs.title }}</h2>
         <div class="container faqs__container">
@@ -199,7 +199,7 @@
 
 
     <!-- ================================== START OF SUBSCRIBE ============================== -->
-    <section class="subscribe">
+    <section class="section subscribe">
         <div class="container subscribe__container">
             <div class="subscribe__text">
                 <h1>Subscribe to get updated</h1>

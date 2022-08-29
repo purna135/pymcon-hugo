@@ -112,4 +112,14 @@
   {{ if templates.Exists "partials/extend-head.html" }}
     {{ partialCached "extend-head.html" .Site }}
   {{ end }}
+
+  {{ range .Site.Params.customcss }}
+  <link rel="stylesheet" href="{{ . | absURL }}">
+  {{- end }}
+
+
+  {{ range $elem := .Site.Params.customjscssraw }}
+      {{ $elem | safeHTML }}
+  {{- end }}
+
 </head>
