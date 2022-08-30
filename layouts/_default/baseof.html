@@ -14,7 +14,7 @@
   data-auto-appearance="{{ .Site.Params.autoSwitchAppearance | default "true" }}"
 >
   {{- partial "head.html" . -}}
-  {{ block "pageCustomCSS" . }}{{ end }}
+  {{ block "customCSS" . }}{{ end }}
 </head>
   <body>
     <div id="the-top">
@@ -67,7 +67,7 @@
       <script type="text/javascript" src="{{ . | absURL }}"></script>
     {{- end }}
 
-    {{ block "pageCustomJS" . }}{{ end }}
+    {{ block "customJS" . }}{{ end }}
     
   </body>
 </html>
