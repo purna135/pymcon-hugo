@@ -416,7 +416,6 @@
     /* =========================== HEADER ========================== */
     .header {
         height: 65vh;
-        margin-bottom: 5rem;
     }
 
     .header__container {
@@ -474,7 +473,7 @@
 
     /* ======================= HEADER ======================== */
     .header {
-        margin-top: 2rem;
+        margin-top: 4rem;
         height: 100vh;
     }
 
