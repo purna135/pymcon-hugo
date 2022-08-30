@@ -1,0 +1,41 @@
+<header class="py-6 sm:py-10">
+  <nav class="nav">
+    <div class="container nav__container">
+    {{/* Site logo/title */}}
+    <div>
+      {{ if .Site.Params.Logo -}}
+        {{ $logo := resources.Get .Site.Params.Logo }}
+        {{ if $logo }}
+          <a href="{{ "" | relLangURL }}">
+            <img
+              src="{{ $logo.RelPermalink }}"
+              width="{{ div $logo.Width 2 }}"
+              height="{{ div $logo.Height 2 }}"
+              class="max-w-[10rem] max-h-[10rem] object-scale-down object-left"
+              alt="{{ .Site.Title }}"
+            />
+          </a>
+        {{ end }}
+      {{ else }}
+      <h4><a
+          class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2"
+          rel="me"
+          href="{{ "" | relLangURL }}"
+          >{{ .Site.Title | markdownify | emojify }}</a
+        ></h4>
+      {{- end }}
+      {{ partial "translations.html" . }}
+    </div>
+    {{/* Main menu */}}
+    {{ if .Site.Menus.main }}
+      <ul class="nav__menu">
+          {{ range .Site.Menus.main }}
+              <li><a href="{{ .URL }}"> {{ .Name }} </a></li>
+          {{ end }}
+      </ul>
+    {{ end }}
+    <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
+    <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
+  </div>
+  </nav>
+</header>

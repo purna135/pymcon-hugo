@@ -1,46 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PyMCon Web Series</title>
-
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/images/favicon/site.webmanifest">
-
-    <!-- Iconscout Icon CDN-->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
-
-    <!-- Google Font (Montserrat)-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap">
-
-    <!-- Swiper JS for Logo Slider-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./css/style.css">
-
-    <!-- Background Texture -->
+{{ define "customCSS" }}
+    {{ $baseURL := .Site.BaseURL }}
+    <link rel="stylesheet" href="{{ $baseURL }}css/home.css">
     <style>
         body {
-            background-image: url("images/bg-texture.png");
+            background-image: url("{{ $baseURL }}images/bg-texture.png");
         }
     </style>
-</head>
+{{ end }}
 
-<body>
-
-    {{ partial "navbar.html" . }}
-
+{{ define "customSection" }}
     <!-- ============================== START OF HEADER ===================== -->
-    <header id="main-content">
+    <header class="header">
         <div class="container header__container">
             <div class="header__left">
                 <h1>{{.Site.Params.heading}}</h1>
@@ -67,7 +37,7 @@
 
 
     <!-- ========================== START OF GOALS ========================== -->
-    <section class="golas">
+    <section class="section golas">
         <div class="container golas__container">
             {{ $goals := .Site.Data.goals }}
             <div class="golas__left">
@@ -93,7 +63,7 @@
 
 
     <!-- ================================== START OF KEYNOTE SPEAKERS ============================== -->
-    <section class="speakers">
+    <section class="section speakers">
         {{ $speakers := .Site.Data.incoming_talks}}
         <h2> {{ $speakers.title}} </h2>
         <div class="container speakers__container">
@@ -124,7 +94,7 @@
 
 
     <!-- ================================== START OF TEAM ============================== -->
-    <section class="team" id="organizers">
+    <section class="section team" id="organizers">
         {{ $organizers := .Site.Data.organizers}}
         <h2> {{ $organizers.title }}</h2>
         <div class="container team__container">
@@ -153,7 +123,7 @@
 
 
     <!-- ================================== START OF SPONSORS ============================== -->
-    <section class="container sponsors__container">
+    <section class="section container sponsors__container">
         {{ $sponsors := .Site.Data.sponsors}}
         <h2>{{ $sponsors.title }}</h2>
         <div class="swiper logoSlider">
@@ -175,30 +145,8 @@
 
 
 
-
-    <!-- ================================== START OF FAQs ============================== -->
-    <section class="faqs" id="faqs">
-        {{ $faqs := .Site.Data.faqs}}
-        <h2>{{ $faqs.title }}</h2>
-        <div class="container faqs__container">
-            {{ range $faqs.faq}}
-                <article class="faq" tabindex="0">
-                    <div class="faq__icon"><i class="uil uil-plus"></i></div>
-                    <div class="question__answer">
-                        <h4> {{ .question }} </h4>
-                        <p> {{ .answer }} </p>
-                    </div>
-                </article>
-            {{ end }}
-        </div>
-    </section>
-    <!-- ================================== END OF FAQs ============================== -->
-
-
-
-
     <!-- ================================== START OF SUBSCRIBE ============================== -->
-    <section class="subscribe">
+    <section class="section subscribe">
         <div class="container subscribe__container">
             <div class="subscribe__text">
                 <h1>Subscribe to get updated</h1>
@@ -212,14 +160,10 @@
     </section>
     <!-- ================================== END OF SUBSCRIBE ============================== -->
 
-    
-    {{ partial "footer.html" . }}
+{{ end }}
 
 
-
-    <!-- =============== JAVASCRIPT ================== -->
-    <script src="./js/main.js"></script>
-
+{{ define "customJS" }}
     <!-- ================== ANIMATION ==================== -->
     <script src="./js/animation_script.js"></script>
 
@@ -284,7 +228,4 @@
             }
         });
     </script>
-
-</body>
-
-</html>
+{{ end }}

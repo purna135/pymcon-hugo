@@ -1,0 +1,29 @@
+{{ define "customCSS" }}
+    {{ $baseURL := .Site.BaseURL }}
+    <link rel="stylesheet" href="{{ $baseURL }}css/faq.css">
+    <style>
+        body {
+            background-image: url("{{ $baseURL }}images/bg-texture.png");
+        }
+    </style>
+{{ end }}
+
+{{ define "customSection" }}
+<!-- ================================== START OF FAQs ============================== -->
+<section class="section faqs" id="faqs">
+    {{ $faqs := .Site.Data.faqs}}
+    <h2>{{ $faqs.title }}</h2>
+    <div class="container faqs__container">
+        {{ range $faqs.faq}}
+            <article class="faq" tabindex="0">
+                <div class="faq__icon"><i class="uil uil-plus"></i></div>
+                <div class="question__answer">
+                    <h4> {{ .question }} </h4>
+                    <p> {{ .answer }} </p>
+                </div>
+            </article>
+        {{ end }}
+    </div>
+</section>
+<!-- ================================== END OF FAQs ============================== -->
+{{ end }}
