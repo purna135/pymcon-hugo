@@ -14,6 +14,8 @@
   data-auto-appearance="{{ .Site.Params.autoSwitchAppearance | default "true" }}"
 >
   {{- partial "head.html" . -}}
+  {{ block "pageCustomCSS" . }}{{ end }}
+</head>
   <body>
     <div id="the-top">
       <a href="#main-content" class="skip_to_main">
@@ -28,7 +30,11 @@
     {{ else }}
       {{ partial "partials/header/basic.html" . }}
     {{ end }}
-    <div class="container">
+
+    {{$customeLayout := .Params.layout }}
+    {{ if not $customeLayout }}
+      <div class="container">
+    {{ end }}
       <div class="relative flex flex-col grow">
         <main id="main-content" class="grow">
           {{ block "main" . }}{{ end }}
@@ -58,5 +64,8 @@
     {{ range .Site.Params.customjs }}
       <script type="text/javascript" src="{{ . | absURL }}"></script>
     {{- end }}
+
+    {{ block "pageCustomJS" . }}{{ end }}
+    
   </body>
 </html>

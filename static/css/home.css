@@ -1,5 +1,5 @@
 /* ============================ HEADER ======================== */
-header {
+.header {
     position: relative;
     top: 5rem;
     overflow: hidden;
@@ -379,50 +379,6 @@ header {
 
 
 
-/* ======================== FAQs ====================== */
-.faqs {
-    margin-top: 5rem;
-    background: var(--color-bg1);
-    box-shadow: inset 0 0 3rem rgba(0, 0, 0, 0.5);
-}
-
-.faqs__container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-
-.faq {
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    gap: 1.4rem;
-    height: fit-content;
-    background: var(--color-primary);
-    cursor: pointer;
-}
-
-.faq h4 {
-    font-size: 1rem;
-    line-height: 2.2rem;
-}
-
-.faq__icon {
-    align-self: flex-start;
-    font-size: 1.2rem;
-}
-
-.faq p {
-    margin-top: 0.8rem;
-    display: none;
-}
-
-.faq.open p {
-    display: block;
-}
-
-
-
 /* ======================== SUBSCRIBE ====================== */
 .subscribe__container {
     background: var(--color-primary);
@@ -461,7 +417,7 @@ header {
 @media screen and (max-width: 1024px) {
 
     /* =========================== HEADER ========================== */
-    header {
+    .header {
         height: 65vh;
         margin-bottom: 5rem;
     }
@@ -505,12 +461,6 @@ header {
     }
 
 
-    /* ============================ FAQs ============================== */
-    .faqs__container {
-        grid-template-columns: 1fr;
-    }
-
-
     /* ========================== SUBSCRIBE =========================== */
     .subscribe__container {
         grid-template-columns: 1fr;
@@ -526,7 +476,7 @@ header {
 @media screen and (max-width: 600px) {
 
     /* ======================= HEADER ======================== */
-    header {
+    .header {
         margin-top: 2rem;
         height: 100vh;
     }
@@ -596,11 +546,6 @@ header {
         border-radius: 10px;
     }
 
-
-    /* ================================ FAQs =================== */
-    .faqs__container {
-        gap: 0.5rem;
-    }
 
     /* ======================= SUBSCRIBE ======================== */
     .subscribe__container {

@@ -117,10 +117,7 @@
   <link rel="stylesheet" href="{{ . | absURL }}">
   {{- end }}
 
-  {{ with .Params.css }}<link rel="stylesheet" href="{{ . }}" />{{ end }}
-
   {{ range $elem := .Site.Params.customjscssraw }}
       {{ $elem | safeHTML }}
   {{- end }}
 
-</head>
