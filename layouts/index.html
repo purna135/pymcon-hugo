@@ -176,28 +176,6 @@
 
 
 
-
-    <!-- ================================== START OF FAQs ============================== -->
-    <section class="section faqs" id="faqs">
-        {{ $faqs := .Site.Data.faqs}}
-        <h2>{{ $faqs.title }}</h2>
-        <div class="container faqs__container">
-            {{ range $faqs.faq}}
-                <article class="faq" tabindex="0">
-                    <div class="faq__icon"><i class="uil uil-plus"></i></div>
-                    <div class="question__answer">
-                        <h4> {{ .question }} </h4>
-                        <p> {{ .answer }} </p>
-                    </div>
-                </article>
-            {{ end }}
-        </div>
-    </section>
-    <!-- ================================== END OF FAQs ============================== -->
-
-
-
-
     <!-- ================================== START OF SUBSCRIBE ============================== -->
     <section class="section subscribe">
         <div class="container subscribe__container">
