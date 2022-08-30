@@ -1,45 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PyMCon Web Series</title>
-
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/images/favicon/site.webmanifest">
-
-    <!-- Iconscout Icon CDN-->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.5/css/unicons.css">
-
-    <!-- Google Font (Montserrat)-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap">
-
-    <!-- Swiper JS for Logo Slider-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/home.css">
-
-    <!-- Background Texture -->
+{{ define "pageCustomCSS" }}
+    {{ $baseURL := .Site.BaseURL }}
+    <link rel="stylesheet" href="{{ $baseURL }}css/home.css">
     <style>
         body {
-            background-image: url("images/bg-texture.png");
+            background-image: url("{{ $baseURL }}images/bg-texture.png");
         }
     </style>
-</head>
+{{ end }}
 
-<body>
-
-    {{ partial "navbar.html" . }}
-
+{{ define "customSection" }}
     <!-- ============================== START OF HEADER ===================== -->
     <header class="header" id="main-content">
         <div class="container header__container">
@@ -191,14 +160,10 @@
     </section>
     <!-- ================================== END OF SUBSCRIBE ============================== -->
 
-    
-    {{ partial "footer.html" . }}
+{{ end }}
 
 
-
-    <!-- =============== JAVASCRIPT ================== -->
-    <script src="./js/main.js"></script>
-
+{{ define "pageCustomJS" }}
     <!-- ================== ANIMATION ==================== -->
     <script src="./js/animation_script.js"></script>
 
@@ -263,7 +228,4 @@
             }
         });
     </script>
-
-</body>
-
-</html>
+{{ end }}

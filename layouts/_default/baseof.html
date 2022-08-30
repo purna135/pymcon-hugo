@@ -32,9 +32,10 @@
     {{ end }}
 
     {{$customeLayout := .Params.layout }}
-    {{ if not $customeLayout }}
-      <div class="container">
-    {{ end }}
+    {{ if $customeLayout }}
+      {{ block "customSection" . }}{{ end }}
+    {{ else }}
+    <div class="container">
       <div class="relative flex flex-col grow">
         <main id="main-content" class="grow">
           {{ block "main" . }}{{ end }}
@@ -55,6 +56,7 @@
         </main>
       </div>
     </div>
+    {{ end }}
 
     {{- partial "footer.html" . -}}
     {{ if .Site.Params.enableSearch | default false }}

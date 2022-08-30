@@ -2,7 +2,7 @@
 title: "PyMCon'22 - Web Series"
 description: ""
 date: ""
-css: "css/home.css"
+layout: "index"
 ---
 
 <div class="hero-image">
