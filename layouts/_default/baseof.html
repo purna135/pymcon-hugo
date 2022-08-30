@@ -33,6 +33,7 @@
 
     {{$customeLayout := .Params.layout }}
     {{ if $customeLayout }}
+      <div id="main-content"></div>
       {{ block "customSection" . }}{{ end }}
     {{ else }}
     <div class="container">
