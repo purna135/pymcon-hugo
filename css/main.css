@@ -412,8 +412,7 @@ img {
     
     /* ======================= SMALL HEADER ======================== */
     .small__header {
-        margin-top: 4rem;
-        height: 80vh;
+        height: 60vh;
     }
 
     .small__header__container {
