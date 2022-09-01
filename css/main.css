@@ -372,7 +372,7 @@ img {
 
     /* =========================== small__header ========================== */
     .small__header {
-        height: 20vh;
+        height: 25vh;
     }
 
     .small__header__container {
@@ -412,17 +412,13 @@ img {
     
     /* ======================= SMALL HEADER ======================== */
     .small__header {
-        height: 60vh;
+        height: 50vh;
     }
 
     .small__header__container {
         grid-template-columns: 1fr;
         text-align: center;
         margin-top: 0;
-    }
-
-    .small__header__left p {
-        margin-bottom: 1.3rem;
     }
 
 
