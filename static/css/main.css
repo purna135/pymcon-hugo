@@ -187,6 +187,26 @@ img {
 }
 
 
+/* ============================ SMALL HEADER ======================== */
+.small__header {
+    position: relative;
+    overflow: hidden;
+    height: 51vh;
+}
+
+.small__header__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 5rem;
+    height: 100%;
+}
+
+.small__header__left p {
+    margin: 1rem 0;
+}
+
+
 /* ======================== FOOTER ====================== */
 .footer {
     background: var(--color-bg1);
@@ -350,6 +370,16 @@ img {
     }
 
 
+    /* =========================== small__header ========================== */
+    .small__header {
+        height: 50vh;
+    }
+
+    .small__header__container {
+        gap: 0;
+    }
+
+
     /* ======================= FOOTER ======================== */
     .footer__container {
         grid-template-columns: 1fr 1fr;
@@ -378,6 +408,24 @@ img {
         text-align: center;
         gap: 2rem;
     }
+
+    
+    /* ======================= SMALL HEADER ======================== */
+    .small__header {
+        margin-top: 4rem;
+        height: 80vh;
+    }
+
+    .small__header__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .small__header__left p {
+        margin-bottom: 1.3rem;
+    }
+
 
     .footer__1 p {
         margin: 1rem auto;
