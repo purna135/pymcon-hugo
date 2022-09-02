@@ -191,7 +191,6 @@ img {
 .small__header {
     position: relative;
     overflow: hidden;
-    height: 51vh;
 }
 
 .small__header__container {
@@ -256,9 +255,9 @@ img {
 /* =================== MEDIA QUERIES (TABLETS) ========================= */
 
 @media screen and (max-width: 1024px) {
-    /* .section {
+    .section {
         padding: 4rem 0;
-    } */
+    }
 
     .container {
         width: var(--container-width-md);
@@ -371,10 +370,6 @@ img {
 
 
     /* =========================== small__header ========================== */
-    .small__header {
-        height: 25vh;
-    }
-
     .small__header__container {
         gap: 0;
     }
@@ -412,13 +407,18 @@ img {
     
     /* ======================= SMALL HEADER ======================== */
     .small__header {
-        height: 50vh;
+        height: 80vh;
+        margin-top: 4rem;
     }
 
     .small__header__container {
         grid-template-columns: 1fr;
         text-align: center;
         margin-top: 0;
+    }
+
+    .small__header__left p {
+        margin-bottom: 1.3rem;
     }
 
 
