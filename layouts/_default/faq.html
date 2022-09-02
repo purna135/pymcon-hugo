@@ -20,7 +20,7 @@
 
         <div class="small__header__right">
             <div class="small__header__right-image">
-                <img src="{{ .Site.BaseURL }}images/faq.svg">
+                <img src="{{ .Site.BaseURL }}images/faq.svg" alt="">
             </div>
         </div>
     </div>
@@ -32,7 +32,7 @@
     <h2>FAQs</h2>
     <div class="container faqs__container">
         {{ range $faq := $faqs.faq}}
-            <article class="faq" tabindex="0">
+            <article class="faq" tabindex="0" id="{{ replace $faq.question " " "_" }}">
                 <div class="faq__icon"><i class="uil uil-plus"></i></div>
                 <div class="question__answer">
                     <h4> {{ $faq.question }} </h4>
