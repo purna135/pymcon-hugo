@@ -168,7 +168,11 @@ textarea {
     box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
 }
 
-.popup button:focus {
+.popup button:hover {
+    background: var(--color-bg2);
+}
+
+.popup button:focus-visible {
     outline: 3px solid var(--color-danger);
     outline-offset: 5px;
 }
