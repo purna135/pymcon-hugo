@@ -2,6 +2,5 @@
 title: "Contact"
 description: ""
 slug: "contact"
+layout: "contact"
 ---
-
-[Email](pymconference@gmail.com)
