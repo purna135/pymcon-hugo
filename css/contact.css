@@ -40,13 +40,14 @@
 
 .contact__aside p {
     font-size: 0.9rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .contact__details li {
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
     align-items: center;
+    margin-top: 0.4rem;
 }
 
 .contact__socials {
