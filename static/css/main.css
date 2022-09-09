@@ -170,6 +170,10 @@ img {
     display: none;
 }
 
+.nav__logo {
+    width: 25%;
+}
+
 .nav__menu {
     display: flex;
     align-items: center;
@@ -292,6 +296,10 @@ img {
         display: none;
     }
 
+    .nav__logo {
+        width: 30%;
+    }
+
     .nav__menu {
         position: fixed;
         top: 5rem;
@@ -392,6 +400,10 @@ img {
 
 
     /* ======================= NAVBAR ======================== */
+    .nav__logo {
+        width: 60%;
+    }
+
     .nav__menu {
         right: 3%;
     }

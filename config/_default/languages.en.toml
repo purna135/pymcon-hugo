@@ -6,7 +6,7 @@ weight = 1
 rtl = false
 
 title = "PyMCon"
-# logo = "img/logo.jpg"
+logo = "images/logo-3.png"
 heading = "PYMCON'22 Web Series"
 subHeading = "An Asynchronous-first virtual conference for the Bayesian community"
 description = "We believe in building a community as much as we believe in building code. Come and join with us!"
@@ -18,11 +18,12 @@ dateFormat = "2 January 2006"
   name = "PyMC Team"
   #image = "img/author.svg"
   contact = "9090909090"
-  email = "pymc@gmail.com"
+  email = "pymconference@gmail.com"
   headline = ""
   bio = ""
-  links = [
-    { twitter = "https://twitter.com/pymc_devs" },
-    { linkedin = "https://www.linkedin.com/company/pymc" },
-    { youtube = "https://www.youtube.com/c/PyMCDevelopers" },
-  ]
+  twitter = "https://twitter.com/pymc_devs"
+  linkedin = "https://www.linkedin.com/company/pymc"
+  discourse = "https://discourse.pymc.io/c/events/pymcon-web-series/23"
+  youtube = "https://www.youtube.com/c/PyMCDevelopers"
+  github = "https://github.com/pymc-devs/pymc"
+  meetup = "https://www.meetup.com/pymc-online-meetup/"

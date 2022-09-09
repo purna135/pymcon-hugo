@@ -19,41 +19,41 @@
             </div>
             <h2>Contact Us</h2>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae,
+                Have any comments or questions? We'd be delighted to hear from you.
             </p>
             <ul class="contact__details">
                 <li>
-                    <i class="uil uil-phone-times"></i>
-                    <h5>+91 9090909090</h5>
+                    <i class="uil uil-comment-alt-lines"></i>
+                    <h5><a href="{{ .Site.Author.discourse }}">discourse.pymc.io</a></h5>
+                </li>
+                <li>
+                    <i class="uil uil-chat-bubble-user"></i>
+                    <h5><a href="{{ .Site.Author.meetup }}">pymc online meetup</a></h5>
                 </li>
                 <li>
                     <i class="uil uil-envelope"></i>
-                    <h5>support@pymc.com</h5>
-                </li>
-                <li>
-                    <i class="uil uil-location-point"></i>
-                    <h5>Delhi, India</h5>
+                    <h5><a href="mailto:{{ .Site.Author.email }}">{{ .Site.Author.email }}</a></h5>
                 </li>
             </ul>
             <ul class="contact__socials">
                 <li>
-                    <a href="#">
-                        <i class="uil uil-facebook-f"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="uil uil-instagram"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
+                    <a href="{{ .Site.Author.twitter }}">
                         <i class="uil uil-twitter"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ .Site.Author.linkedin }}">
                         <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ .Site.Author.youtube }}">
+                        <i class="uil uil-youtube"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ .Site.Author.github }}">
+                        <i class="uil uil-github"></i>
                     </a>
                 </li>
             </ul>
@@ -84,7 +84,7 @@
     <div class="popup" id="popup">
         <img src="{{ .Site.BaseURL }}images/contact_popup.svg" alt="">
         <h2>Thank You</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis, consequatur.</p>
+        <p>Thanks for sending us a note. We'll get back to you soon.</p>
         <button type="button" onclick="closePopup()">OK</button>
     </div>
 </div>
