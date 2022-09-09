@@ -174,6 +174,11 @@ img {
     width: 25%;
 }
 
+.nav__logo:focus-within img {
+    outline: 2px solid var(--color-white);
+    border-radius: 5px;
+}
+
 .nav__menu {
     display: flex;
     align-items: center;
