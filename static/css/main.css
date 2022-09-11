@@ -155,7 +155,7 @@ img {
 
 /* Change navbar style on scroll using javascript */
 .window-scroll {
-    background: var(--color-primary);
+    background: var(--color-bg2);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
